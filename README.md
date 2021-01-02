@@ -5,15 +5,15 @@
 
 ## Instructions
 1. clone the Dockerfile
-```
+```bash
 wget https://github.com/ceskvar/Jenkins-Docker-Linux-Install.git
 ```
 2. build the docker image
-```
+```bash
 sudo docker build -t myjenkins-blueocean:1.1 .
 ```
 3. execute the container
-```
+```bash
 sudo docker run --name jenkins-blueocean --rm --detach \
   --network jenkins --env DOCKER_HOST=tcp://docker:2376 \
   --env DOCKER_CERT_PATH=/certs/client --env DOCKER_TLS_VERIFY=1 \
@@ -23,6 +23,6 @@ sudo docker run --name jenkins-blueocean --rm --detach \
   myjenkins-blueocean:1.1
 ```
 4. get a password (change id_contenedor for your own)
-```
+```bash
 sudo docker exec id_contenedor cat var/Jenkins_home/secrets/initialAdminPassword
 ```
